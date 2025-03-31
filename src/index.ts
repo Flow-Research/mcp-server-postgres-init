@@ -61,7 +61,7 @@ server.tool(
                 throw new Error('Could not determine assigned host port for PostgreSQL container.');
             }
 
-            const connectionUrl = `postgresql://postgres:${dbPassword}@localhost:${hostPort}/${dbName}`;
+            const connectionUrl = `postgresql://${dbUser}:${dbPassword}@localhost:${hostPort}/${dbName}`;
             const successMsg = `PostgreSQL container '${containerName}' started successfully. DB: ${dbName}. Connection URL: ${connectionUrl}`;
             console.error(successMsg);
 
